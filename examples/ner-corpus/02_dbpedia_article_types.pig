@@ -26,7 +26,7 @@ redirected_wikipedia_links = FOREACH redirect_joined GENERATE
 
 -- Load dbpedia type data and filter out the overly generic owl:Thing type
 instance_types =
-  LOAD '$INPUT/instance_types_en.nt'
+  LOAD '$INPUT/instance_types_$LANG.nt'
   USING pignlproc.storage.UriUriNTriplesLoader(
     'http://www.w3.org/1999/02/22-rdf-syntax-ns#type')
   AS (dburi: chararray, type: chararray);
