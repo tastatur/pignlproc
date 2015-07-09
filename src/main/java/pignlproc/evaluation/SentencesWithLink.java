@@ -35,7 +35,7 @@ import org.apache.pig.impl.logicalLayer.schema.Schema.FieldSchema;
  */
 public class SentencesWithLink extends EvalFunc<DataBag> {
 
-    public static final String ENGLISH_SENTMODEL_PATH = "opennlp/en-sent.bin";
+    public static final String GERMAN_SENTMODEL_PATH = "opennlp/de-sent.bin";
 
     TupleFactory tupleFactory = TupleFactory.getInstance();
 
@@ -46,7 +46,7 @@ public class SentencesWithLink extends EvalFunc<DataBag> {
     public SentencesWithLink() throws IOException {
         ClassLoader loader = getClass().getClassLoader();
         // TODO: un-hardcode the model language
-        String path = ENGLISH_SENTMODEL_PATH;
+        String path = GERMAN_SENTMODEL_PATH;
         InputStream in = loader.getResourceAsStream(path);
         if (in == null) {
             String message = String.format("Failed to find resource for model"

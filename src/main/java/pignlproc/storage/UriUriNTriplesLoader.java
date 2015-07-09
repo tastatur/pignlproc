@@ -23,6 +23,10 @@ public class UriUriNTriplesLoader extends AbstractNTriplesLoader {
         this(null, null, null);
     }
 
+    public UriUriNTriplesLoader(String propUrl) {
+        this(propUrl, null, null);
+    }
+
     public UriUriNTriplesLoader(String propertyUri, String subjectNamespace,
 	    String objectNamespace) {
 	super();

@@ -30,7 +30,7 @@ public class RawWikipediaLoader extends LoadFunc {
 
     protected BagFactory bagFactory;
 
-    protected String languageCode = "en";
+    protected String languageCode = "de";
 
     public RawWikipediaLoader() {
     }

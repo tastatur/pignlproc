@@ -13,7 +13,6 @@
       <groupId>org.apache.pig</groupId>
       <artifactId>pig</artifactId>
       <version>0.15.0</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
