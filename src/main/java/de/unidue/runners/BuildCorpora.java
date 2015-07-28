@@ -3,9 +3,7 @@ package de.unidue.runners;
 import org.apache.log4j.Logger;
 import org.apache.pig.PigServer;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,9 +18,10 @@ public class BuildCorpora {
         final String workingDir = argc[1];
         final String targetDir = argc[2];
         final PigServer pig = new PigServer(LOCAL);
-        try (InputStream dbpediaSentenceseScript = new FileInputStream(scriptsDir.concat("/01_extract_sentences_with_links.pig"));
-             InputStream dbpediaArticleScript = new FileInputStream(scriptsDir.concat("/02_dbpedia_article_types.pig"));
-             InputStream dbpediaJoin = new FileInputStream(scriptsDir.concat("/03_join_by_type_and_convert.pig"))) {
+        try {
+            String dbpediaSentenceseScript = scriptsDir.concat("/01_extract_sentences_with_links.pig");
+            String dbpediaArticleScript = scriptsDir.concat("/02_dbpedia_article_types.pig");
+            String dbpediaJoin = scriptsDir.concat("/03_join_by_type_and_convert.pig");
 
             final Map<String, String> sentencesParams = new HashMap<>();
             sentencesParams.put("LANG", "de");
